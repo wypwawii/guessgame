@@ -388,7 +388,7 @@ func (game *Game) Process() {
 	switch game.state {
 	case MenuState, FinishState:
 		var cmd Command
-		_, err := fmt.Scan(&cmd)
+		_, err := fmt.Scanln(&cmd)
 
 		if err != nil {
 			game.error = "Некорректная команда!"
@@ -398,7 +398,7 @@ func (game *Game) Process() {
 		game.HandleCommand(cmd)
 	case InGameState:
 		var guess int
-		_, err := fmt.Scan(&guess)
+		_, err := fmt.Scanln(&guess)
 
 		if err != nil {
 			game.error = "Введите число!"
